@@ -1,0 +1,9 @@
+<!--pages/personsec/index.wxml-->
+<text>单位名称：{{danwei}}</text>
+ <text> {{motto}} </text>
+<text>大楼名称：{{dalou}}</text>
+ <text> {{motto}} </text>
+ <text>电话号码：{{dianhuahao}}</text>
+ <text> {{motto}} </text>
+ <text>负责人：{{fuzeren}}</text>
+ <text> {{motto}} </text>

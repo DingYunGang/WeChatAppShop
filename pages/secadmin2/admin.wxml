@@ -1,0 +1,25 @@
+<view class="container">
+
+	<view class="userinfo">
+		<image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+		<text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+	</view>
+  <view style="height:5rpx;background: #EAEAEA;width:100%;"></view>
+  <view class="my-item" style='background:none;display:flex;flex-direction:column;height:auto;'>
+    <view>
+      总收入{{balance}} 元， 总销售额 {{freeze}} 元
+    </view>
+    <view style='display:flex;padding-bottom:20rpx;'>
+      <button  style='width:100%;margin-right:70rpx;' bindtap="recharge">转账</button>
+      <button style='width:100%;margin-right:70rpx;' bindtap="withdraw">提现</button>
+    </view>
+  </view>
+ <view style="height:5rpx;background: #EAEAEA;width:100%;"></view>
+   <view class="my-item"> 
+   <navigator url="../personsec/index" hover-class="navigator-hover" style='font-size:35px '>我的个人信息</navigator>
+    <navigator url="../secadminorder/index" hover-class="navigator-hover" style='font-size:35px '>订单处理</navigator>
+    <navigator url="../SecLirun/index" hover-class="navigator-hover" style='font-size:35px '>我的订单和利润</navigator>
+  </view>
+  <view style="height:5rpx;background: #EAEAEA;width:100%;"></view> 
+  
+</view>

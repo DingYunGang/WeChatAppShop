@@ -1,0 +1,20 @@
+<!--pages/FuYu/FuYu.wxml-->
+
+<view   wx:for-items="{{List}}" wx:key="index">
+
+
+ <text> 单位名称:{{item.danwei}}</text>
+   <text> {{motto}} </text>
+       <text> 大楼名称:{{item.dalou}} </text>
+        <text> {{motto}} </text>
+    <text> 负责人:{{item.fuzeren}} </text>
+        <text> {{motto}} </text>
+    <text> 电话号码:{{item.dianhuahao}} </text>
+        <text> {{motto}} </text>
+     <view class="topay-btn" bindtap="fuyu" data-id="{{item.objectId}}">赋予权限</view>
+     <text> {{motto}} </text>
+     <view class="topay-btn" bindtap="jujue" data-id="{{item.objectId}}">拒绝请求</view>
+ <text>------------------------------------</text>
+  <text> {{motto}} </text>
+
+  </view>

@@ -1,0 +1,82 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="container">  
+    <image src="{{goods.picture._url}}" class="image" mode="aspectFill"/>
+   </view>
+<!--商品图片  -->
+   <!--商品信息  -->
+   <view class="goods-info">
+        <view class="goods-title">{{goods.name}}</view>  
+    <view class="goods-price" style="padding-left:35rpx;">¥ {{goods.price}}</view>
+     <!-- <view class="goods-title">库存 {{goods.goodsnum}} 件</view> -->
+   </view>
+   <!--商品介绍  -->
+    <view class="goods-des-info">
+        <view class="label-title">商品介绍</view>
+        <view class="goods-text">{{goods.content}}</view>
+        <view class="label-title">商品口味/分类：[ {{goods.kouwei}} ]</view>
+        <input placeholder="要购买的口味/分类"  class="label-title" value="" bindblur="setfenlei" name="kouwei"/>
+    </view>
+     
+    
+          
+
+    <view class="footer-box">        
+        <view class="contact">
+        <!--各种按钮的定义整体布局  -->
+          <contact-button style="opacity:0;position:absolute;" type="default-dark"  session-from="weapp" size="27"></contact-button>
+          <view style='position:absolute;bottom:10rpx;'> 客服 </view>
+        </view>
+        <view class="shop-cart-btn" bindtap="goShopCar">
+            <view class="shop-num">({{shopNum}})</view>
+            <view style='position:absolute;bottom:10rpx;'> 购物车 </view>
+        </view>
+        <view class="join-shop-cart" bindtap="toAddShopCar">加入购物车</view>
+        <view class="now-buy" bindtap="tobuy">立即购买</view>
+   </view>
+    
+    <view class="show-popup" hidden="{{hideShopPopup}}" >
+        <view class="popup-mask" bindtap="closePopupTap"></view>
+        <view class="popup-contents">
+        
+             <view class="pop-goods-info">
+                <view class="pop-img-box">
+                    <image src="{{goods.picture._url}}" class="goods-thumbnail"/>
+                </view>
+
+                <view class="pop-goods-des">
+                    <view class="pop-goods-title">{{goods.name}}</view>
+                    <view class="pop-goods-price">¥ {{goods.price}}</view>
+                </view>
+                <view class="pop-goods-close" bindtap="closePopupTap"></view>
+             </view>
+             <view class="size-label-box">
+                <block wx:for="{{goodsDetail.properties}}" wx:for-item="property" wx:for-index="idx" wx:key="id">
+                <view class="label">{{property.name}}</view> 
+                <view class="label-item-box">
+                    <view class="label-item {{item.active ? 'active' : '' }}" wx:for="{{property.childsCurGoods}}" wx:key="id" bindtap="labelItemTap" data-propertyindex="{{idx}}" data-propertyid="{{property.id}}" data-propertyname="{{property.name}}" data-propertychildindex="{{index}}" data-propertychildid="{{item.id}}" data-propertychildname="{{item.name}}">
+                        {{item.name}}
+                    </view> 
+                </view>
+                </block>
+             </view> 
+             <view class="buy-num-box">
+                <view class="num-label">购买数量</view>
+                <!--商品数量加减  -->
+                <view class="num-box">
+                    <view class="num-jian {{buyNumber == buyNumMin ? 'hui': ''}}" bindtap="numJianTap">-</view>
+                    <view class="num-input">
+                       <input  type="number" value="{{buyNumber}}" disabled/>
+                    </view>
+                    <view class="num-jia {{buyNumber== buyNumMax ? 'hui': ''}}" bindtap="numJiaTap">+</view>
+                </view>
+             </view>  
+             <view class="popup-join-btn" wx:if="{{shopType =='addShopCar'}}" bindtap="addShopCar">
+                加入购物车
+             </view>
+
+             <view class="popup-join-btn" wx:if="{{shopType =='tobuy'}}" bindtap="buyNow">
+                立即购买
+             </view>                      
+        </view>
+    </view>
+<!-- </view> -->

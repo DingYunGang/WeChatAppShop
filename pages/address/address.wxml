@@ -1,0 +1,73 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section">
+    <view class="section__title">省：</view>
+    <picker bindchange="bindChangeProvince" value="{{indexProvince}}" range="{{arrayProvince}}">
+      <view class="picker">
+        {{arrayProvince[indexProvince]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="section">
+    <view class="section__title">市：</view>
+    <picker bindchange="bindChangeCity" value="{{indexCity}}" range="{{arrayCity}}">
+      <view class="picker">
+        {{arrayCity[indexCity]}}
+      </view>
+    </picker>
+  </view>
+
+  <view  class="section">
+    <view class="section__title">区/县：</view>
+    <picker bindchange="bindChangeCounty" value="{{indexCounty}}" range="{{arrayCounty}}">
+      <view class="picker">
+        {{arrayCounty[indexCounty]}}
+      </view>
+    </picker>
+  </view>
+
+   <view class="section">
+    <view class="section__title">单位/小区：</view>
+    <picker bindchange="bindChangedanyuan" value="{{indexdanyuan}}" range="{{arraydanyuan}}">
+      <view class="picker">
+        {{arraydanyuan[indexdanyuan]}}
+      </view>
+    </picker>
+  </view>
+
+  
+ <view class="section">
+    <view class="section__title">住宅楼号：</view>
+    <picker bindchange="bindChangeXiaoqu" value="{{index}}" range="{{arraydanwei}}">
+      <view class="picker">
+        {{arraydanwei[index]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="detail-address section">
+    <view class="section__title">门牌号：</view>
+     	<view class="picker">
+   		 <input name="inputdoor" placeholder="输入地址信息" value="{{detailAddress}}" />
+    	</view>      
+  </view>
+
+  <view class="detail-address section">
+  	 <view class="section__title">收货人姓名：</view>
+   	<view class="picker">
+    	<input name="inputName" placeholder="名字" value="{{receiverName}}" />    
+    </view>	
+  </view>
+
+  <view class="detail-address section">
+    <view class="section__title">手机号：</view>
+     	<view class="picker">
+    <input name="inputMobile" placeholder="联系手机" value="{{receiverMobile}}" />
+    </view>
+    </view>  
+
+  <view class="btn-area">
+   <button formType="reset" type='primary'>没有找到合适地址？手动添加</button>
+    <button formType="submit" type='primary'>确认提交</button>
+  </view>
+</form>

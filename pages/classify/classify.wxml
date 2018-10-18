@@ -1,0 +1,13 @@
+<!--pages/classify/classify.wxml-->
+<!-- <text>pages/classify/classify.wxml</text> -->
+<view class='container'>
+  <view class='left'>
+    <view class='left-item {{type==item.id?"left-item-select":""}}' data-classify="{{item.id}}" bindtap="typeSelect"  wx:for="{{left}}">{{item.name}}</view>
+  </view>
+  <view class='right'>
+    <navigator url="../goods-details/index?moodId={{item.objectId}}" class='right-item' wx:for="{{content}}">
+      <image class='goods-img' src="{{item.img}}"></image>
+      <view class='goods-text'>{{item.name}}</view> 
+    </navigator>
+  </view>
+</view>

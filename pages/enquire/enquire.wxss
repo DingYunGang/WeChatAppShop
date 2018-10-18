@@ -1,0 +1,11 @@
+.container{
+  text-align:center;
+}
+.section{
+  display: flex;
+  flex-direction: row;
+  border: 1rpx solid lightgrey;
+  padding: 15rpx;
+  width: 95%;
+  text-align: center;
+}

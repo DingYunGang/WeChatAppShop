@@ -1,0 +1,24 @@
+<!--pages/main/main.wxml-->
+ <!-- <import src="../template/list.wxml" />  -->
+
+ 
+   <view class="item" wx:for="{{moodList}}" wx:key="" wx:for-index="index" wx:for-item="item">    
+    
+  
+     <image src="{{item.picture._url}}" class="image" mode="aspectFill">
+      </image> 
+  <view class="goods-title">商品名称：{{item.name}}
+  </view>
+
+ <view class="goods-title" bindtap="xiugai" data-id="{{item.objectId}}">修改商品信息</view>
+ <view class="goods-price">价格：¥ {{item.price}}</view>  
+
+<view class="right-edit" bindtap="shanchu" data-id="{{item.objectId}}"></view> 
+
+  </view>   
+
+ <text class="noData" wx:if="{{moodList.length<=0}}">
+  你还没有发表商品
+</text>
+<navigator class="toWrite" url="../write/write">
+</navigator> 

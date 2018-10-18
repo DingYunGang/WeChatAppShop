@@ -1,0 +1,8 @@
+<!--pages/XiuGaiShangPingMuLu/xiugai.wxml-->
+<view class='about'bindtap="mingzi">商品名字</view>
+<view class='about'bindtap="kouwei">商品口味</view>
+<view class='about'bindtap="jieshao">商品内容介绍</view>
+<view class='about'bindtap="order">商品排列顺序</view>
+<view class='about'bindtap="fenlei">商品分类</view>
+<view class='about'bindtap="yuanjia">商品售出价格 </view>
+<view class='about'bindtap="jiage">商品进货价格</view>

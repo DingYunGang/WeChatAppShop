@@ -1,0 +1,16 @@
+<!--pages/SellPriceCount/SellPriceCount.wxml-->
+<view   wx:for-items="{{moodList}}" wx:key="index">
+
+  <text> 卖出商品:{{item.goodstr}}</text>
+   <text> {{motto}} </text>
+   
+   <text>订单利润:{{item.lirun}}</text>
+   <text> {{motto}} </text>
+       <text> 成交时间:{{item.shouhuoTime}} </text>
+        <text> {{motto}} </text>
+ <text>------------------------------------</text>
+  <text> {{motto}} </text>
+  </view>
+      <text> 总利润{{total}} </text>
+  <text> {{motto}} </text>
+

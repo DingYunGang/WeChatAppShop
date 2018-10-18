@@ -1,0 +1,35 @@
+<view class="container">
+	<view class="userinfo">
+		<image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+		<text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+	</view>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view class="my-item" style='background:none;display:flex;flex-direction:column;height:auto;'>
+    <view>
+     总收入 {{balance}} 元， 总销售额 {{freeze}} 元
+    </view>
+    <view style='display:flex;padding-bottom:20rpx;'>
+      <button  style='width:100%;margin-right:70rpx;' bindtap="recharge">充值</button>
+      <button style='width:100%;margin-right:70rpx;' bindtap="withdraw">提现</button>
+    </view>
+  </view>
+
+ 
+
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+   <view class="about" bindtap="aboutUs">
+  商城首页
+  </view> 
+     <view class="about" bindtap="tuichu">
+  账户退出
+  </view> 
+    <navigator class="about" url="../FuYu/FuYu">赋予二级商权限</navigator>
+    <navigator class="about" url="../zhekou/zhekou">修改提成比例</navigator>
+   <navigator class="about" url="../about/about">添加商品</navigator>
+     <navigator class="about" url="../main/main">删除和修改商品</navigator>
+   
+   <navigator class="about" url="../adminorder/index">订单处理</navigator>
+    <navigator class="about" url="../enquire/enquire">订单分析</navigator>
+   <!-- <navigator url="../orderListTotal/index">已完成的订单情况</navigator> -->
+  
+</view>

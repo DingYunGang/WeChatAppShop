@@ -1,0 +1,20 @@
+<view class="container">
+    <view class="address-list">
+        <view class="a-address"  wx:for-items="{{addressList}}" wx:key="{{index}}">
+             <view class="left-text {{item.isDefault? 'active':''}}" bindtap="selectTap" data-id="{{item.objectId}}">
+                 <view class="name-tel">
+                    {{item.name}}  {{item.phoneNum}}
+                 </view>
+                 <view class="address-box">
+                  {{item.sheng}}{{item.shi}}{{item.xian}}  {{item.xiangxidizhi}}
+                  {{item.louhao}}{{item.menpaihao}}
+                 </view>     
+             </view>   
+             <view class="right-edit" bindtap="editAddess" data-id="{{item.objectId}}"></view> 
+        </view>
+    </view>
+    <view class="bottom-box">
+        <view class="add-btn" bindtap="addAddess">新增收货地址</view>
+    </view>
+
+</view>

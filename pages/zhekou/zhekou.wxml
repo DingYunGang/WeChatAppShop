@@ -1,0 +1,12 @@
+<!--pages/zhekou/zhekou.wxml-->
+<text>分给二级商的折扣是</text>
+<text>{{motto}}</text>
+<text>{{zhekou}} %</text>
+<text>{{motto}}</text>
+<text>{{motto}}</text>
+<text>输入要修改的提成比例</text>
+<text>{{motto}}</text>
+ <input bindblur="input" name="input"  placeholder=''/>%
+ <text>{{motto}}</text>
+  <button bindtap="formSubmit" formType="submit" style='background:#00F5FF'>提交修改
+  </button> 

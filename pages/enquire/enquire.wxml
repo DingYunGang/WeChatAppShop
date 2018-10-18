@@ -1,0 +1,28 @@
+<view class='container'>
+请输入查询的时间
+</view>
+
+<view class='section'>
+ <input bindblur="inputyear" name="year" placeholder=''/>年
+  <input bindblur="inputmonth"name="inputyue"  placeholder=''/>月
+    <input bindblur="inputday" name="inputri"  placeholder=''/>日    
+ </view>
+<text>至</text> 
+<view class='section'>
+ <input bindblur="inputyear2" name="year2" placeholder=''/>年
+  <input bindblur="inputmonth2"name="inputyue2"  placeholder=''/>月
+    <input bindblur="inputday2" name="inputri2"  placeholder=''/>日
+      
+ </view>
+  <view class='container'>
+   <button bindtap="formSubmit" formType="submit" style='background:#00F5FF'>各二级商</button> 
+ </view>
+  <view class='container'>
+   <button bindtap="formdingdan" formType="submit" style='background:#00F5FF'>已完成订单</button> 
+    </view>
+   <view class='container'>
+   <button bindtap="formgood" formType="submit" style='background:#00F5FF'>卖出商品</button> 
+ </view>
+  <view class='container'>
+   <button bindtap="formpricecount" formType="submit" style='background:#00F5FF'>利润</button> 
+ </view>

@@ -1,0 +1,11 @@
+<!--pages/SellSecNum/SellSecNum.wxml-->
+<view   wx:for-items="{{moodList}}" wx:key="index">
+<navigator  url="../SellSecGood/SellSecGood?str={{str}}&id={{item.objectId}}&dalou={{item.dalou}}&danwei={{item.danwei}}&str2={{str2}}&zhekou={{zhekou}}" >
+    <view >负责人:{{item.fuzeren}}  </view>
+    <view >电话号码:{{item.dianhuahao}}  </view>
+    <view >单位:{{item.danwei}}  </view>
+    <view >大楼:{{item.dalou}}  </view>
+    <text>------------------------------------</text>
+      <text> {{motto}} </text>
+    </navigator>
+</view>

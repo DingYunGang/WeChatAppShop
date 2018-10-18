@@ -1,0 +1,14 @@
+<!--pages/SellGoodNum/index.wxml-->
+ <view   wx:for-items="{{moodList}}" wx:key="index">
+
+ 
+   
+   <text> 卖出商品数量:{{item.goodstr}}</text>
+   <text> {{motto}} </text>
+       <text> 成交时间:{{item.shouhuoTime}} </text>
+        <text> {{motto}} </text>
+ <text>------------------------------------</text>
+  <text> {{motto}} </text>
+  </view>
+
+  <text> {{motto}} </text>

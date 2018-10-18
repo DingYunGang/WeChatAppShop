@@ -1,0 +1,26 @@
+<!--pages/SecLirun/index.wxml-->
+ <view   wx:for-items="{{moodList}}" wx:key="index">
+
+
+    <view >购买人:{{item.personname}}  </view>
+     <text> 发货地址：{{item.dizhi}} </text>
+     <text> {{motto}} </text>
+   
+   <text> 商品名称:{{item.goodstr}}</text>
+   <text> {{motto}} </text>
+  <text> 总价:{{item.total}} </text>
+   <text> {{motto}} </text>
+    <text> 利润:{{item.lirun}} </text>
+   <text> {{motto}} </text>
+   <text> 分成是:{{item.lirun}} *{{bili}} ={{ item.lirun*bili}}</text>
+   <text> {{motto}} </text>
+    <text> 发货时间:{{item.fahuotime}} </text>
+      <text> {{motto}} </text>
+       <text> 成交时间:{{item.shouhuoTime}} </text>
+        <text> {{motto}} </text>
+ <text>------------------------------------</text>
+  <text> {{motto}} </text>
+  </view>
+<text> 总提成:{{chen}} </text>
+        <text> {{motto}} </text>
+  <text> {{motto}} </text>

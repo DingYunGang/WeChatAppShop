@@ -1,0 +1,17 @@
+//公用模版
+
+<template name="listTemp">
+    <image  mode="aspectFill" src="{{listPic}}" class="listPic" wx:if="{{listPic}}" bindtap="seeBig"></image>
+    
+    <view class="price" wx-if="{{price!=''}}">{{"价格: "+price}}</view>
+    <view class="content"><text>{{content}}</text></view>
+</template>
+<template name="listHeader">
+    <view class="list_header">
+        <view class="list_header_left">
+            <image  mode="aspectFill" src="{{pic}}" wx:if="pic"></image>
+            <view>{{userNick}}</view>
+        </view>
+        <view class="list_header_right">{{publishTime}}</view>
+    </view>
+</template>

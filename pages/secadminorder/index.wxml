@@ -1,0 +1,47 @@
+<view class="container">
+    <view class="status-box">
+        <view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}"> {{item}}
+        
+        </view>
+    </view>
+    <view class="no-order" hidden="{{moodList ? true : false}}">
+        <image src="/images/no-order.png" class="no-order-img"></image>
+        <view class="text">暂无订单</view>
+    </view>
+    <view class="order-list" hidden="{{moodList ? false : true}}">
+        <view class="a-order" wx:for-items="{{moodList}}" wx:key="{{}}">
+            <view class="order-date">
+                <view class="date-box">下单时间：{{item.createdAt}}</view>
+                 <view hidden="{{item.fahuotime==null? true : false}}" >发货时间：{{item.fahuotime}}</view>
+                <view hidden="{{item.shouhuoTime==null? true : false}}" >收货时间：{{item.shouhuoTime}}</view>
+                <view class="status {{(item.status==0 || item.status==4) ? '':''}}">{{item.statusStr}}</view>
+            </view>
+            <view class="goods-info" bindtap="orderDetail" data-id="{{item.id}}">
+                <view class="goods-des">
+                   <view>商品名字:{{item.goodstr}}</view>
+                    <view>用户姓名:{{item.personname}} </view>
+                    <view>收货地址:{{item.dizhi}}</view>
+                    <view>电话号码:{{item.phone}}</view>
+                   <view wx:if="{{item.orderContext && item.orderContext != ''}}">备注： {{item.orderContext}}</view>
+                   
+                </view>
+            </view>
+            <view >
+                 <scroll-view class="goods-img-container" scroll-x="true">
+                    <view class="img-box"> 
+              <image style="width:120rpx height:120rpx" src="{{item.picture._url}}" class="goods-img"></image> 
+                     </view>
+                </scroll-view> 
+            </view>
+            <view class="price-box">
+                <view class="total-price">合计：¥ {{item.total}}</view>
+                  <view class="btn topay-btn" hidden="{{item.zhifu==1? false : true}}" bindtap="cancelOrderTap"  data-id="{{item.objectId}}" >取消订单</view>
+                 <view class="btn topay-btn" hidden="{{item.zhifu==1? false : true}}" bindtap="fahuo"  data-id="{{item.objectId}}" >确认发货</view>
+                 <view class="btn topay-btn" hidden="{{item.zhifu==2? false : true}}"  bindtap="querenshouhuo"data-id="{{item.objectId}}" >发货完成</view>
+                   <view class="btn topay-btn" hidden="{{item.zhifu==3? false : true}}"  data-id="{{item.objectId}}" >交易完成</view>
+                
+            </view>  
+        </view>
+
+    </view>
+</view>
